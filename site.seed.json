@@ -1,0 +1,332 @@
+{
+  "brand": "FORM",
+  "tagline": "训练有计划，改变看得见。",
+  "announcement": "循序渐进，给身体足够的恢复时间。每次训练的热量消耗为估算值。",
+  "workouts": [
+    {
+      "id": "full",
+      "title": "全身力量",
+      "focus": "全身 · 基础力量",
+      "met": 4.8,
+      "description": "使用可控的复合动作训练全身，适合健身房或居家替代方案。",
+      "exercises": [
+        {
+          "id": "squat",
+          "nameGym": "腿举 / 高脚杯深蹲",
+          "nameHome": "徒手深蹲",
+          "sets": "3 组 × 10–12 次",
+          "minutes": 6,
+          "met": 5.0,
+          "area": "下肢",
+          "cues": [
+            "双脚稳定踩地，膝盖朝脚尖方向移动。",
+            "保持躯干稳定，下降到自己可控且无痛的幅度。"
+          ],
+          "videoUrl": ""
+        },
+        {
+          "id": "pushup",
+          "nameGym": "胸推机 / 哑铃卧推",
+          "nameHome": "俯卧撑（可跪姿）",
+          "sets": "3 组 × 8–12 次",
+          "minutes": 6,
+          "met": 4.5,
+          "area": "胸部",
+          "cues": [
+            "肩胛稳定，手腕大致位于肘部下方。",
+            "身体保持整体稳定，不要塌腰或耸肩。"
+          ],
+          "videoUrl": "https://www.youtube.com/watch?v=I9fsqKE5XHo"
+        },
+        {
+          "id": "row",
+          "nameGym": "坐姿划船",
+          "nameHome": "单臂哑铃划船 / 弹力带划船",
+          "sets": "3 组 × 10–12 次",
+          "minutes": 6,
+          "met": 4.5,
+          "area": "背部",
+          "cues": [
+            "先稳定躯干，再让肘部沿身体侧面向后移动。",
+            "不要借助大幅后仰甩动重量。"
+          ],
+          "videoUrl": ""
+        },
+        {
+          "id": "bridge",
+          "nameGym": "臀桥 / 臀推",
+          "nameHome": "臀桥",
+          "sets": "3 组 × 12 次",
+          "minutes": 5,
+          "met": 3.8,
+          "area": "臀腿",
+          "cues": [
+            "收紧腹部，脚掌踩稳。",
+            "抬起时挤压臀部，避免腰部过度反弓。"
+          ],
+          "videoUrl": ""
+        },
+        {
+          "id": "walk",
+          "nameGym": "跑步机坡度走 / 自行车",
+          "nameHome": "原地快走 / 户外快走",
+          "sets": "12–15 分钟",
+          "minutes": 12,
+          "met": 4.3,
+          "area": "有氧",
+          "cues": [
+            "从舒适强度开始，逐渐提升速度或坡度。",
+            "能说完整句子但呼吸加快，通常是可持续的中等强度。"
+          ],
+          "videoUrl": ""
+        }
+      ]
+    },
+    {
+      "id": "upper",
+      "title": "上肢力量",
+      "focus": "胸 · 背 · 肩",
+      "met": 4.5,
+      "description": "兼顾推、拉动作，让上肢训练更加均衡。",
+      "exercises": [
+        {
+          "id": "chest",
+          "nameGym": "哑铃卧推 / 胸推机",
+          "nameHome": "俯卧撑（可跪姿）",
+          "sets": "3 组 × 8–12 次",
+          "minutes": 7,
+          "met": 4.5,
+          "area": "胸部",
+          "cues": [
+            "动作过程中保持肩部稳定。",
+            "下降和推起都要可控，不追求反弹。"
+          ],
+          "videoUrl": "https://www.youtube.com/watch?v=I9fsqKE5XHo"
+        },
+        {
+          "id": "pulldown",
+          "nameGym": "高位下拉",
+          "nameHome": "弹力带下拉 / 弹力带划船",
+          "sets": "3 组 × 10–12 次",
+          "minutes": 7,
+          "met": 4.5,
+          "area": "背部",
+          "cues": [
+            "肩膀远离耳朵，先收紧肩胛。",
+            "把肘部向下带，避免身体大幅后仰。"
+          ],
+          "videoUrl": ""
+        },
+        {
+          "id": "shoulder",
+          "nameGym": "坐姿哑铃肩推",
+          "nameHome": "轻哑铃肩推 / 墙面俯卧撑",
+          "sets": "2–3 组 × 8–12 次",
+          "minutes": 6,
+          "met": 4.0,
+          "area": "肩部",
+          "cues": [
+            "腹部收紧，不用腰部反弓借力。",
+            "动作幅度以肩部舒适为准。"
+          ],
+          "videoUrl": ""
+        },
+        {
+          "id": "row2",
+          "nameGym": "坐姿划船",
+          "nameHome": "哑铃划船 / 弹力带划船",
+          "sets": "3 组 × 10–12 次",
+          "minutes": 7,
+          "met": 4.5,
+          "area": "背部",
+          "cues": [
+            "控制回程，不要让重量突然拉动肩膀。",
+            "躯干保持稳定。"
+          ],
+          "videoUrl": ""
+        },
+        {
+          "id": "walk2",
+          "nameGym": "椭圆机 / 跑步机",
+          "nameHome": "快走 / 原地踏步",
+          "sets": "10–15 分钟",
+          "minutes": 12,
+          "met": 4.0,
+          "area": "有氧",
+          "cues": [
+            "先热身，再找到可持续的节奏。",
+            "如不适，降低速度或停止训练。"
+          ],
+          "videoUrl": ""
+        }
+      ]
+    },
+    {
+      "id": "lower",
+      "title": "下肢力量",
+      "focus": "腿 · 臀 · 核心稳定",
+      "met": 5.0,
+      "description": "以动作质量和稳定性为重点，避免为了消耗热量而牺牲姿势。",
+      "exercises": [
+        {
+          "id": "squat2",
+          "nameGym": "腿举 / 高脚杯深蹲",
+          "nameHome": "徒手深蹲 / 坐站练习",
+          "sets": "3 组 × 8–12 次",
+          "minutes": 7,
+          "met": 5.0,
+          "area": "腿部",
+          "cues": [
+            "脚掌稳定，膝盖与脚尖方向大致一致。",
+            "控制下放，保持可以稳定起身的幅度。"
+          ],
+          "videoUrl": ""
+        },
+        {
+          "id": "hinge",
+          "nameGym": "罗马尼亚硬拉（轻重量起步）",
+          "nameHome": "髋关节折叠练习 / 臀桥",
+          "sets": "3 组 × 8–12 次",
+          "minutes": 7,
+          "met": 5.0,
+          "area": "臀腿后侧",
+          "cues": [
+            "臀部向后移动，保持脊柱中立。",
+            "重量贴近腿部，避免弯腰去够地面。"
+          ],
+          "videoUrl": ""
+        },
+        {
+          "id": "lunge",
+          "nameGym": "反向弓步 / 台阶踏上",
+          "nameHome": "扶墙辅助反向弓步",
+          "sets": "2–3 组 × 8 次/侧",
+          "minutes": 6,
+          "met": 4.5,
+          "area": "腿部",
+          "cues": [
+            "先找到稳定平衡，再逐渐增加动作幅度。",
+            "前脚全脚掌踩稳，膝盖沿脚尖方向移动。"
+          ],
+          "videoUrl": ""
+        },
+        {
+          "id": "calf",
+          "nameGym": "站姿提踵",
+          "nameHome": "扶墙提踵",
+          "sets": "3 组 × 12–15 次",
+          "minutes": 5,
+          "met": 3.5,
+          "area": "小腿",
+          "cues": [
+            "动作上下来回都控制速度。",
+            "不要靠弹跳完成次数。"
+          ],
+          "videoUrl": ""
+        },
+        {
+          "id": "walk3",
+          "nameGym": "坡度走 / 自行车",
+          "nameHome": "户外快走 / 原地踏步",
+          "sets": "10–12 分钟",
+          "minutes": 12,
+          "met": 4.3,
+          "area": "有氧",
+          "cues": [
+            "选择膝踝舒适的方式。",
+            "逐步增加时长，不需要每次都冲刺。"
+          ],
+          "videoUrl": ""
+        }
+      ]
+    },
+    {
+      "id": "cardio",
+      "title": "有氧与核心",
+      "focus": "心肺 · 核心稳定",
+      "met": 4.5,
+      "description": "使用容易维持的有氧强度，再进行短时间核心训练。",
+      "exercises": [
+        {
+          "id": "cardio1",
+          "nameGym": "跑步机快走 / 椭圆机",
+          "nameHome": "户外快走 / 原地踏步",
+          "sets": "20–25 分钟",
+          "minutes": 22,
+          "met": 4.5,
+          "area": "有氧",
+          "cues": [
+            "逐渐热身，不要突然冲到高强度。",
+            "能够说短句但呼吸加快，可作为中等强度的参考。"
+          ],
+          "videoUrl": ""
+        },
+        {
+          "id": "deadbug",
+          "nameGym": "死虫式",
+          "nameHome": "死虫式",
+          "sets": "3 组 × 8–10 次/侧",
+          "minutes": 5,
+          "met": 3.0,
+          "area": "核心",
+          "cues": [
+            "腰背保持舒适稳定，动作慢而可控。",
+            "如果腰部拱起，缩小手脚伸展幅度。"
+          ],
+          "videoUrl": ""
+        },
+        {
+          "id": "plank",
+          "nameGym": "平板支撑",
+          "nameHome": "跪姿平板支撑（可选）",
+          "sets": "3 组 × 20–40 秒",
+          "minutes": 5,
+          "met": 3.0,
+          "area": "核心",
+          "cues": [
+            "头、躯干与骨盆尽量保持一条线。",
+            "保持自然呼吸，不要憋气硬撑。"
+          ],
+          "videoUrl": ""
+        }
+      ]
+    },
+    {
+      "id": "recovery",
+      "title": "主动恢复",
+      "focus": "恢复 · 灵活性",
+      "met": 2.5,
+      "description": "低强度活动，帮助维持习惯并为下一次训练恢复体力。",
+      "exercises": [
+        {
+          "id": "easywalk",
+          "nameGym": "轻松步行 / 自行车",
+          "nameHome": "轻松散步",
+          "sets": "10–20 分钟",
+          "minutes": 15,
+          "met": 2.8,
+          "area": "恢复",
+          "cues": [
+            "强度保持轻松，可以自然交谈。",
+            "如果身体疲劳明显，也可以完全休息。"
+          ],
+          "videoUrl": ""
+        },
+        {
+          "id": "mobility",
+          "nameGym": "全身轻度活动",
+          "nameHome": "全身轻度活动",
+          "sets": "5–8 分钟",
+          "minutes": 7,
+          "met": 2.3,
+          "area": "灵活性",
+          "cues": [
+            "避免弹震式拉伸和疼痛范围。",
+            "按自身活动度轻柔进行。"
+          ],
+          "videoUrl": ""
+        }
+      ]
+    }
+  ]
+}
