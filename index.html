@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#09111f"><meta name="description" content="FORM 个人健身规划：自适应训练安排、运动能量估算和动作教学。">
+<title>FORM — 个人健身规划</title><link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <a class="brand" href="#" aria-label="FORM 首页"><span class="brand-icon">F</span><span><b id="brandSide">FORM</b><small>PERSONAL FITNESS</small></span></a>
+    <div class="side-label">WORKSPACE</div>
+    <nav class="nav">
+      <button class="nav-item active" data-view="overview"><span>◫</span> 总览</button>
+      <button class="nav-item" data-view="plan"><span>▦</span> 我的计划</button>
+      <button class="nav-item" data-view="library"><span>▶</span> 动作教学</button>
+      <button class="nav-item" data-view="records"><span>↗</span> 训练记录</button>
+      <button class="nav-item" data-view="settings"><span>⚙</span> 个人参数</button>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="status-dot"></div><span>本地个人记录 · 公共计划内容</span>
+      <button id="developerOpen" class="developer-link"><span>⌘</span> 开发者选项</button>
+    </div>
+  </aside>
+  <main class="main">
+    <header class="mobile-header">
+      <a class="brand compact" href="#"><span class="brand-icon">F</span><span><b id="brandMobile">FORM</b><small>FITNESS PLANNER</small></span></a>
+      <button id="mobileDeveloper" class="icon-btn" aria-label="开发者选项">⌘</button>
+    </header>
+    <header class="topbar">
+      <div><div class="overline">YOUR TRAINING SPACE</div><div id="todayDate" class="subtle"></div></div>
+      <div class="top-actions"><span class="pill">BETA · 1.0</span><div class="avatar" id="userAvatar">F</div></div>
+    </header>
+    <section class="view active" id="view-overview">
+      <div class="hero-row">
+        <div><div class="kicker"><span class="live-dot"></span> PERSONALIZED TRAINING</div><h1 id="mainTitle">训练有计划，<br><span>改变看得见。</span></h1><p class="muted" id="mainTagline">根据你的目标与实际时间，生成可以执行的训练安排。</p></div>
+        <div class="hero-mark" aria-hidden="true"><div class="orbit orbit1"></div><div class="orbit orbit2"></div><div class="hero-core">F</div><div class="hero-label">MOVE WITH INTENT</div></div>
+      </div>
+      <div id="announcement" class="announcement"><span class="announce-icon">i</span><span>循序渐进，给身体足够的恢复时间。</span></div>
+      <div class="metrics">
+        <article class="metric-card"><div class="metric-top">本周训练 <span>01 / FREQUENCY</span></div><div class="metric-number" id="metricSessions">0 <small>次</small></div><div class="metric-foot" id="metricFrequency">目标每周 4 次</div><div class="mini-bar"><span id="frequencyBar"></span></div></article>
+        <article class="metric-card"><div class="metric-top">预计运动消耗 <span>02 / ENERGY</span></div><div class="metric-number" id="metricCalories">— <small>kcal</small></div><div class="metric-foot">按本周计划估算 · 非实测</div><div class="sparkline"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+        <article class="metric-card"><div class="metric-top">当前体重 <span>03 / BODY</span></div><div class="metric-number" id="metricWeight">— <small>kg</small></div><div class="metric-foot" id="weightMeta">在个人参数中填写</div><button class="text-action" data-jump="settings">更新身体数据 ↗</button></article>
+      </div>
+      <div class="section-heading"><div><div class="overline">YOUR NEXT SESSION</div><h2>今日训练</h2></div><button class="button ghost" data-jump="plan">查看完整计划 <span>→</span></button></div>
+      <div class="today-layout">
+        <article class="panel today-panel">
+          <div class="panel-top"><div><span id="todayFocus" class="chip">FULL BODY</span><h3 id="todayWorkoutTitle">全身力量</h3><p class="muted small" id="todayWorkoutSub">约 45 分钟 · 健身房 / 居家适配</p></div><div class="energy-bubble"><b id="todayKcal">—</b><span>预计 kcal</span></div></div>
+          <div class="progress-wrap"><div class="progress-label"><span>训练进度</span><b id="todayProgress">0 / 0</b></div><div class="progress-track"><span id="todayProgressBar"></span></div></div>
+          <div id="todayExercises" class="exercise-list"></div>
+          <div class="today-footer"><span class="subtle small">勾选动作可记录训练进度</span><button class="button primary" id="completeToday">完成今日训练 <span>↗</span></button></div>
+        </article>
+        <aside class="panel week-panel"><div class="panel-heading"><div><div class="overline">WEEKLY RHYTHM</div><h3>本周安排</h3></div><span class="tiny-pill" id="weekLabel">7 DAYS</span></div><div id="weekSchedule" class="week-schedule"></div><div class="note-box"><b>训练提示</b><p id="weeklyTip">持续执行比短期冲刺更重要。若疲劳明显，降低强度或休息。</p></div></aside>
+      </div>
+    </section>
+    <section class="view" id="view-plan">
+      <div class="page-heading"><div><div class="overline">PLAN / ADAPT</div><h1>我的训练计划</h1><p class="muted">每次调整个人参数，安排会同步重新计算。</p></div><button class="button primary" data-jump="settings">调整计划参数 ↗</button></div>
+      <div class="plan-summary" id="planSummary"></div>
+      <div class="day-tabs" id="planTabs"></div>
+      <div class="plan-grid"><article class="panel plan-detail" id="planDetail"></article><aside class="panel energy-panel"><div class="overline">ENERGY ESTIMATE</div><h3>本次能量明细</h3><p class="muted small">公式参考 MET × 3.5 × 体重(kg) ÷ 200 × 分钟。实际值会因动作效率、休息时间等变化。</p><div id="energyBreakdown"></div><div class="energy-total"><span>本次预计消耗</span><b id="sessionEnergy">— kcal</b></div><div class="subtle xs">估算用途：比较训练量，不是精确测量。</div></aside></div>
+    </section>
+    <section class="view" id="view-library">
+      <div class="page-heading"><div><div class="overline">MOVEMENT / LEARN</div><h1>动作教学库</h1><p class="muted">查看动作要点，并在当前页面内观看教学视频（需联网）。</p></div></div>
+      <div class="library-toolbar"><label class="searchbox"><span>⌕</span><input id="exerciseSearch" placeholder="搜索动作 / 部位..." aria-label="搜索动作"></label><select id="exerciseFilter" aria-label="动作筛选"><option value="all">全部动作</option><option value="home">居家可做</option><option value="gym">健身房</option><option value="video">有视频</option></select></div>
+      <div id="exerciseLibrary" class="library-grid"></div>
+      <div class="source-note">视频由外部平台提供，播放受所在网络、视频可用性及嵌入权限影响。没有视频的动作仍提供文字要点。</div>
+    </section>
+    <section class="view" id="view-records">
+      <div class="page-heading"><div><div class="overline">HISTORY / PROGRESS</div><h1>训练记录</h1><p class="muted">个人记录保存在当前浏览器，可导出备份。</p></div><button class="button ghost" id="exportPersonal">导出个人数据 ↓</button></div>
+      <div class="metrics record-metrics"><article class="metric-card"><div class="metric-top">累计完成训练</div><div class="metric-number" id="recordCount">0 <small>次</small></div><div class="metric-foot">当前设备保存记录</div></article><article class="metric-card"><div class="metric-top">记录运动时长</div><div class="metric-number" id="recordMinutes">0 <small>分钟</small></div><div class="metric-foot">来自已保存记录</div></article><article class="metric-card"><div class="metric-top">最近一次体重</div><div class="metric-number" id="recordWeight">— <small>kg</small></div><div class="metric-foot" id="recordWeightDate">记录体重便于观察趋势</div></article></div>
+      <div class="records-layout"><article class="panel"><div class="panel-heading"><h3>训练历史</h3><span class="tiny-pill">PERSONAL LOG</span></div><div id="historyList" class="history-list"></div></article><article class="panel"><h3>手动添加记录</h3><form id="recordForm" class="form-stack"><label>日期<input type="date" id="recDate" required></label><label>训练类型<select id="recType"></select></label><div class="two-fields"><label>时长（分钟）<input id="recMinutes" type="number" min="1" max="300" placeholder="45"></label><label>体重（kg）<input id="recWeight" type="number" min="25" max="350" step=".1" placeholder="72.5"></label></div><label>训练感受<textarea id="recNote" rows="3" placeholder="状态、强度或备注（选填）"></textarea></label><button class="button primary full-width">保存记录</button></form></article></div>
+    </section>
+    <section class="view" id="view-settings">
+      <div class="page-heading"><div><div class="overline">PROFILE / PREFERENCES</div><h1>个人参数</h1><p class="muted">这些参数控制你的训练安排与能量估算。</p></div><span class="secure-note">⌁ 自动在此设备保存</span></div>
+      <form id="settingsForm" class="settings-grid">
+        <article class="panel settings-card"><div class="settings-title"><span class="settings-icon">◉</span><div><h3>基础身体信息</h3><p class="muted small">用于计算能量估算与个人指标</p></div></div><div class="form-grid"><label>昵称<input id="pName" maxlength="30" placeholder="训练者"></label><label>体重（kg）<input id="pWeight" type="number" min="25" max="350" step=".1" placeholder="例如 72.5" required></label><label>身高（cm）<input id="pHeight" type="number" min="100" max="250" placeholder="例如 175"></label><label>年龄<input id="pAge" type="number" min="16" max="100" placeholder="例如 21"></label></div><p class="inline-hint">年龄、身高用于个人信息展示；当前运动消耗估算主要依据体重、动作强度与时长。</p></article>
+        <article class="panel settings-card"><div class="settings-title"><span class="settings-icon">⌁</span><div><h3>训练偏好</h3><p class="muted small">参数改变后自动更新计划预览</p></div></div><div class="form-grid"><label>主要目标<select id="pGoal"><option value="fatloss">减脂与体能提升</option><option value="fitness">体能与健康</option><option value="strength">力量提升</option></select></label><label>训练经验<select id="pExperience"><option value="intermediate">有一定经验</option><option value="beginner">新手</option><option value="advanced">长期规律训练</option></select></label><label>主要训练场景<select id="pPlace"><option value="both">健身房与居家兼顾</option><option value="gym">主要在健身房</option><option value="home">主要在家训练</option></select></label><label>可用器材<select id="pEquipment"><option value="mixed">器械 + 哑铃 / 自重</option><option value="fullgym">健身房完整器械</option><option value="dumbbells">哑铃 / 弹力带</option><option value="bodyweight">仅徒手</option></select></label><label>每周训练天数<select id="pDays"><option value="3">3 天</option><option value="4">4 天</option><option value="5">5 天</option><option value="6">6 天</option></select></label><label>单次可用时长<select id="pDuration"><option value="30">30 分钟</option><option value="45">45 分钟</option><option value="60">60 分钟</option><option value="75">75 分钟</option></select></label><label>有氧偏好<select id="pCardio"><option value="balanced">力量 + 适量有氧</option><option value="more">偏重有氧</option><option value="less">少量有氧</option></select></label><label>计划起始日<select id="pStart"><option value="1">周一</option><option value="0">周日</option></select></label></div><div class="settings-footer"><span class="muted small">调整后预览会即时变化</span><button type="submit" class="button primary">保存并更新计划 ↗</button></div></article>
+      </form>
+      <div class="safety-banner"><span>i</span><div><b>关于训练与消耗估算</b><p>所有训练与能量数值均为通用估算，不构成医疗建议。出现疼痛、眩晕或异常不适时应停止训练。减脂还受到饮食、睡眠和日常活动等多因素影响。</p></div></div>
+    </section>
+    <footer class="footer"><span>FORM · PERSONAL FITNESS</span><span id="footerBrand">Designed for steady progress.</span></footer>
+  </main>
+</div>
+<nav class="mobile-nav" aria-label="移动端导航"><button class="active" data-view="overview"><span>◫</span>总览</button><button data-view="plan"><span>▦</span>计划</button><button data-view="library"><span>▶</span>动作</button><button data-view="records"><span>↗</span>记录</button><button data-view="settings"><span>⚙</span>参数</button></nav>
+
+<div id="modalShade" class="modal-shade hidden">
+  <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="closeModal" aria-label="关闭">×</button>
+    <div class="overline">FORM / MOVEMENT GUIDE</div><h2 id="modalTitle">动作教学</h2><p id="modalMeta" class="muted small"></p>
+    <div id="modalVideo" class="video-frame"></div>
+    <div class="instruction-block"><h3>动作要点</h3><ol id="modalCues"></ol></div>
+    <p class="source-note">视频内容来自外部平台，FORM 不托管视频内容。请以可控、无痛的动作范围练习。</p>
+  </section>
+</div>
+
+<div id="devShade" class="modal-shade hidden">
+  <section class="modal dev-modal" role="dialog" aria-modal="true" aria-labelledby="devTitle">
+    <button class="modal-close" id="closeDev" aria-label="关闭">×</button>
+    <div class="overline">RESTRICTED AREA / ADMIN</div><h2 id="devTitle">开发者选项</h2><p class="muted small">登录后才能修改公共网页内容。认证由服务器校验，密码不会写入网页源码。</p>
+    <div id="devLoginPanel">
+      <form id="devLoginForm" class="form-stack"><label>开发者密码<input id="devPassword" type="password" autocomplete="current-password" required minlength="1" placeholder="输入服务器配置的管理密码"></label><button class="button primary full-width">验证并进入</button><div class="inline-hint">忘记密码或首次配置？在托管平台的环境变量中设置 ADMIN_PASSWORD。</div></form>
+    </div>
+    <div id="devEditorPanel" class="hidden">
+      <div class="admin-toolbar"><span class="admin-status"><i></i> 已验证 · 当前会话 8 小时</span><button class="button ghost tiny" id="logoutAdmin">退出登录</button></div>
+      <form id="siteEditor" class="form-stack">
+        <div class="form-grid"><label>品牌名称<input id="siteBrand" maxlength="40" required></label><label>首页副标题<input id="siteTagline" maxlength="120"></label></div>
+        <label>首页公告<textarea id="siteAnnouncement" maxlength="500" rows="2"></textarea></label>
+        <div class="editor-divider"></div>
+        <div><h3>公共训练模板</h3><p class="muted small">编辑 JSON 可修改所有访问者看到的训练模板、动作说明、MET 估算强度与 YouTube 教学视频链接。保存前会进行格式校验。</p></div>
+        <label>训练模板 JSON<textarea id="workoutsJson" class="code-field" spellcheck="false" rows="16"></textarea></label>
+        <div class="editor-actions"><button type="button" class="button ghost" id="downloadConfig">导出配置</button><label class="button ghost import-label">导入 JSON<input id="importConfig" type="file" accept="application/json,.json" hidden></label><button type="submit" class="button primary">保存公共网页配置 ↗</button></div>
+      </form>
+    </div>
+    <div id="devMessage" class="dev-message hidden" role="status"></div>
+  </section>
+</div>
+<div id="toast" class="toast" role="status"></div>
+<script src="/app.js" defer></script>
+</body></html>
